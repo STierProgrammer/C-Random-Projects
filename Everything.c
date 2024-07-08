@@ -2,6 +2,58 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Function Prototypes
+void helloWorld();
+void variablesAndTypes();
+void arrays();
+void multidimensionalArrays();
+void conditions();
+void strings();
+void forLoops();
+void whileLoops();
+void functions();
+int add(int a, int b);
+void staticAndAdvanced();
+void pointers();
+void structures();
+void functionArgumentsByReference(int *x);
+void dynamicAllocation();
+void arraysAndPointers();
+void recursion(int n);
+void linkedList();
+void binaryTree();
+void unions();
+void pointerArithmetics();
+void functionPointers();
+void bitmasks();
+
+// Struct Definitions
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
+
+typedef struct TreeNode {
+    int data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+} TreeNode;
+
+// Union Definition
+typedef union {
+    int i;
+    float f;
+    char c;
+} MyUnion;
+
+// Enum Definition
+typedef enum {
+    BIT0 = 1 << 0,
+    BIT1 = 1 << 1,
+    BIT2 = 1 << 2,
+    BIT3 = 1 << 3
+} Bitmask;
+
 void helloWorld() {
     printf("Hello, World!\n");
 }
@@ -39,7 +91,7 @@ void conditions() {
 }
 
 void strings() {
-    char str1[] = "Hello";
+    char str1[11] = "Hello";
     char str2[] = "World";
     strcat(str1, str2);
     printf("Concatenated String: %s\n", str1);
@@ -176,59 +228,58 @@ void functionPointers() {
 }
 
 void bitmasks() {
-    Bitmask mask = BIT1 | BIT3;
+    Bitmask mask = (Bitmask)(BIT1 | BIT3);
     printf("Bitmask with BIT1 and BIT3 set: %d\n", mask);
 }
 
-typedef struct Node {
-    int data;
-    struct Node* next;
-} Node;
-
-typedef struct TreeNode {
-    int data;
-    struct TreeNode* left;
-    struct TreeNode* right;
-} TreeNode;
-
-typedef union {
-    int i;
-    float f;
-    char c;
-} MyUnion;
-
-typedef enum {
-    BIT0 = 1 << 0,
-    BIT1 = 1 << 1,
-    BIT2 = 1 << 2,
-    BIT3 = 1 << 3
-} Bitmask;
-
 int main() {
     helloWorld();
+
     variablesAndTypes();
+
     arrays();
+
     multidimensionalArrays();
+
     conditions();
+
     strings();
+
     forLoops();
+
     whileLoops();
+
     functions();
+
     staticAndAdvanced();
+
     pointers();
+
     structures();
+
     int value = 10;
+
     functionArgumentsByReference(&value);
+
     printf("Value after functionArgumentsByReference: %d\n", value);
+
     dynamicAllocation();
+
     arraysAndPointers();
+
     recursion(5);
+
     linkedList();
+
     binaryTree();
+
     unions();
+
     pointerArithmetics();
+
     functionPointers();
+
     bitmasks();
+
     return 0;
 }
-
