@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Function Prototypes
 void helloWorld();
 void variablesAndTypes();
 void arrays();
@@ -27,7 +26,6 @@ void pointerArithmetics();
 void functionPointers();
 void bitmasks();
 
-// Struct Definitions
 typedef struct Node {
     int data;
     struct Node* next;
@@ -39,14 +37,12 @@ typedef struct TreeNode {
     struct TreeNode* right;
 } TreeNode;
 
-// Union Definition
 typedef union {
     int i;
     float f;
     char c;
 } MyUnion;
 
-// Enum Definition
 typedef enum {
     BIT0 = 1 << 0,
     BIT1 = 1 << 1,
