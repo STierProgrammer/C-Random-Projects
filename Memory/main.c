@@ -30,7 +30,7 @@ void divide(MemoryBlock* currentBlock, size_t size) {
 
     MemoryBlock* newBlock = (MemoryBlock*)((char*)currentBlock + totalSize);
 
-    newBlock->size = currentBlock->size - totalSize;
+    newBlock->size = currentBlock->size - totalSize + sizeof(MemoryBlock);
     newBlock->isFree = true;
     newBlock->next = currentBlock->next;
 
@@ -38,6 +38,7 @@ void divide(MemoryBlock* currentBlock, size_t size) {
     currentBlock->isFree = false;
     currentBlock->next = newBlock;
 }
+
 
 void* MallocRipoff(size_t size) {
     MemoryBlock* currentBlock = Memory;
